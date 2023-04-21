@@ -16,14 +16,15 @@ const Home = () => {
            
            <div className='flex gap-2'>
            <Link  to= "skills"  smooth={true}  duration={700}>  
-                <button className='flex group text-stone-300  items-center border-2 my-2 px-6 py-3 hover:bg-pink-600 hover:border-pink-600'> View Skills
+                <button className='flex group text-stone-300  text-sm md:text-base items-center border-2 md:my-2 md:px-6 md:py-3 py-1 px-2 hover:bg-pink-600 hover:border-pink-600'> View Skills
                 <span>
                 <HiArrowNarrowRight className='ml-2 group-hover:rotate-90 duration-300'/>
                 </span>
                 </button>
                 </Link>
+
             <Link  to= "projects"  smooth={true}  duration={700}>  
-                <button className='flex group text-stone-300  items-center border-2 my-2 px-6 py-3 hover:bg-pink-600 hover:border-pink-600'> View Projects
+                <button className='flex group text-stone-300 text-sm md:text-base  items-center border-2 md:my-2 md:px-6 md:py-3 py-1 px-2 hover:bg-pink-600 hover:border-pink-600'> View Projects
                 <span>
                 <HiArrowNarrowRight className='ml-2 group-hover:rotate-90 duration-300'/>
                 </span>
