@@ -77,3 +77,18 @@
     px-3 whitespace-nowrap text-xs rounded-full bg-[#324158] text-stone-200
   }
 }
+
+
+@media (max-width: 600px) {
+.ReactModal__Content--after-open {
+    padding: 15px 20px !important;
+    margin: -0.8rem
+    } 
+    .ReactModal__Content--after-open h2 {
+      font-size: 1.18rem;
+      line-height: 1.4rem;
+    }   
+    .ReactModal__Content--after-open p {
+      font-size: smaller;
+    }
+}
