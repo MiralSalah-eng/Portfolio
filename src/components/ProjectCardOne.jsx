@@ -95,13 +95,15 @@ const ProjectCardOne = ({item}) => {
         <h2 className='font-bold'>Project Details</h2>
         <div className='flex-wrap md:flex-nowrap flex justify-between mt-4 gap-5 '>
         <div className='w-full '>
-        <img ref={mainImg} src={require(`../assets/images/${item.imgUrl}`)} className='object-cover' alt='' />
+        <img ref={mainImg} src={require(`../assets/images/${item.imgUrl}`)} className='object-cover
+        mb-2
+        ' alt='' />
         
         <div className='md:flex flex-wrap md:mt-4 justify-center gap-2 text-center'>
         
         {
             item.images.map((img,index) => (
-                <img key={index} onClick={(e)=>changeImage(e.target.src)} src={require(`../assets/images/${img}`)} className='md:w-[100px] w-1/4 inline-block mr-1 cursor-pointer
+                <img key={index} onClick={(e)=>changeImage(e.target.src)} src={require(`../assets/images/${img}`)} className='md:w-[100px] mb-2 w-1/4 inline-block mr-1 cursor-pointer
                 md:block md:mr-0
                 ' alt='' />
             ))
