@@ -23,16 +23,14 @@ const ProjectCardOne = ({item}) => {
         overlay: {
           backgroundColor: 'rgba(0, 0, 0, 0.75)',
           zIndex: '20'
-  
         },
         content: {
-          
           border:'none',
           background: '#0d1117' ,
           color: 'rgb(214, 211 ,209)',
-          padding:'80px 50px ',
-        
+          padding:'80px 50px',    
         }
+    
       };
 
   return (
@@ -45,8 +43,9 @@ const ProjectCardOne = ({item}) => {
         {/** Technologies and Title */}
         <div className="flex flex-col gap-2 p-5">
 
-            <h2 title={item.name}
-            className='text-xl font-semibold'
+  
+            <h2 onClick={handleModel} title={item.name}
+            className='text-xl cursor-pointer font-semibold'
             >
                 {item.name}
             </h2>
@@ -90,17 +89,21 @@ const ProjectCardOne = ({item}) => {
     </div>
 
 
-        <Modal style={customStyles} isOpen={isOpen} shouldCloseOnOverClick ={false} onRequestClose ={()=>setIsOpen(false)} >
+        <Modal style={customStyles} isOpen={isOpen} shouldCloseOnOverClick ={false} onRequestClose ={()=>setIsOpen(false)} 
+        
+        >
         <h2 className='font-bold'>Project Details</h2>
         <div className='flex-wrap md:flex-nowrap flex justify-between mt-4 gap-5 '>
-
         <div className='w-full '>
         <img ref={mainImg} src={require(`../assets/images/${item.imgUrl}`)} className='object-cover' alt='' />
-        <div className='md:flex flex-wrap md:mt-4 justify-center gap-2 hidden'>
+        
+        <div className='md:flex flex-wrap md:mt-4 justify-center gap-2 text-center'>
         
         {
             item.images.map((img,index) => (
-                <img key={index} onClick={(e)=>changeImage(e.target.src)} src={require(`../assets/images/${img}`)} className='md:w-[100px] cursor-pointer' alt='' />
+                <img key={index} onClick={(e)=>changeImage(e.target.src)} src={require(`../assets/images/${img}`)} className='md:w-[100px] w-1/4 inline-block mr-1 cursor-pointer
+                md:block md:mr-0
+                ' alt='' />
             ))
         }
 
@@ -112,8 +115,15 @@ const ProjectCardOne = ({item}) => {
 
             <div className='flex justify-center  gap-4 font-semibold mt-5'>
                 {
-                    item.links.map(item => (
-                        <a key={item.id} href={item.link} target="_blank" rel="noreferrer" className={`w-full text-center py-2  ${item.style}`}>{item.text}</a>
+                     item.links.map(item => (
+                        <a title={item.text} key={item.id} href={item.link} target="_blank" rel="noreferrer" className={`text-2xl p-2 text-gray-500 hover:text-teal-500 flex flex-grow justify-center items-center bg-stone-200 rounded-md`}>
+                            
+                            { item.text ==='Demo' && (<FiLink  />) }
+                            { item.text ==='Frontend' && (<BiGitRepoForked />) }
+                            { item.text ==='Full Stack Github' && (<BiGitRepoForked />) }
+                            { item.text ==='Backend' && (<BiGitRepoForked />) }
+                            
+                            </a>
                     ))
                 }
 
